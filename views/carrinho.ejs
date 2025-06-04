@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/carrinho.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Ml Decorações -Carrinho</title>
+</head>
+<body>
+
+    <header>
+        <div class="Top">
+            <img id="InsertPerfilHome"
+                src="https://conteudo.imguol.com.br/c/noticias/69/2022/04/25/como-saber-se-um-perfil-e-fake-no-instagram-facebook-whatsapp-e-tiktok-1650912044927_v2_4x3.jpg"
+                alt="">
+
+            <div class="CardSearchHome">
+                <input type="text" id="InputSearchHome" placeholder="Pesquisar">
+                <i id="LupaSearchHome" class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="InfoUseHome">
+                <i class="fa-solid fa-user"></i>
+                <a href="#">Login ou cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+      <section class="SectionNav">
+        <div class="Left">
+            <button id="BtnToggleCategorias">
+                <span id="SpanCategoriasUm"></span>
+                <span id="SpanCategoriasDois"></span>
+                <span id="SpanCategoriasTrez"></span>
+            </button>
+            <p id="BtnToggleCategorias" style="cursor: pointer;">Todas as categorias</p>
+            <!-- <i class="fa-solid fa-angle-up"></i> -->
+            <i id="BtnToggleCategorias" class="fa-solid fa-caret-down"
+                style="cursor: pointer; transition: .4s ease-in-out;"></i>
+
+           
+        </div>
+
+        <div class="Rigth">
+            <button>
+                <i class="fa-solid fa-comment"></i>
+                Fale conosco
+            </button>
+
+            <button>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Carrinho
+            </button>
+        </div>
+    </section>
+
+
+    <div id="dropdown-menu" class="menucult">
+        <button>Login ou Cadastra-se</button>
+        <button>Notificação</button>
+        <button>Configuração</button>
+    </div>
+
+    
+<a href="/" class="Volta">Voltar à Home</a>
+  
+
+<main>
+
+<section class="cart">
+<h1>Carrinho</h1>
+
+ <div class="category">
+                <p>Item</p>
+                <p>Nome</p>
+                <p>Preço</p>
+                <p>Remover</p>
+        </div>
+
+<ul>
+  <% carrinho.forEach(item => { %>
+    <li>
+      <strong><%= item.nome %></strong> - R$ <%= item.preco.toFixed(2) %>
+      <form action="/remover/<%= item.id %>" method="POST" style="display:inline;">
+        <button type="submit">Remover</button>
+      </form>
+    </li>
+  <% }); %>
+</ul>
+
+
+
+</section>
+
+  <div class="reserva">
+      <h2>Total: R$ <%= total.toFixed(2) %></h2>
+      <button>Reservar</button>
+    </div>
+
+</main>
+
+<footer>
+
+        <div class="infoMain">
+
+            <div class="infoSecond">
+
+                <div class="Symbol">
+                  <img src="img/Logo.png" alt="">
+                </div>
+                <p>Transformamos sonhos em realidade com excelência e dedicação.</p>
+                <p>Siga-nos</p>
+                <p>Instagram: </p>
+                <p>Email:</p>
+                <p>telefone:</p>
+            </div>
+
+            <div class="Map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62228.85624321189!2d-38.5167100500323!3d-12.888194665843509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x716115fe4655131%3A0x4630a84a0e5afc85!2zTUwgZGVjb3Jhw6fDo28gJiBFdmVudG9z!5e0!3m2!1spt-BR!2sbr!4v1745356729670!5m2!1spt-BR!2sbr"
+                    width="600" height="270" class="maps" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+
+        </div>
+
+
+        <div class="copy">
+            <p></p>
+        </div>
+
+    </footer>
+
+  <script src="/public/js/carrinho.js"></script>
+</body>
+</html>

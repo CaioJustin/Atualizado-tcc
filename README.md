@@ -1,1 +1,0 @@
-Public e views somente
